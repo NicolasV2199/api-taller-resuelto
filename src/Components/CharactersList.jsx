@@ -1,3 +1,4 @@
+import { CharacterCard } from "./CharacterCard"
 
 
 export const CharactersList = ({ characters }) => {
@@ -6,7 +7,7 @@ export const CharactersList = ({ characters }) => {
       <div className="cards-container">
         {
           characters.map(char => (
-            <h1 key={char.id}>{char.name}</h1>
+            <CharacterCard key={char.id} character={char} />
           ))
         }
       </div>
