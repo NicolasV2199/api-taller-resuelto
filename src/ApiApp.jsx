@@ -1,3 +1,4 @@
+import { CharactersList } from "./Components/CharactersList";
 import { useFetchApi } from "./Hooks/useFetchApi"
 
 export const ApiApp = () => {
@@ -9,11 +10,7 @@ export const ApiApp = () => {
   return (
     <>
       <h1>Api app</h1>
-      {
-        characters.map(char => (
-          <h1 key={char.id}>{char.name}</h1>
-        ))
-      }
+      <CharactersList characters={characters}/>
     </>
   )
 }
