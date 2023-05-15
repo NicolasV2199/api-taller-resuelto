@@ -3,6 +3,7 @@ import { useState } from "react"
 export const useFetchApi = (page = 1) => {
   
   const [characters, setCharacters] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
   
   const getCharacters = async (page) => {
 
@@ -10,11 +11,12 @@ export const useFetchApi = (page = 1) => {
     const {results} = await resp.json();
 
     setCharacters(results);
-
+    setIsLoading(false);
   }
   
   return {
     characters,
     getCharacters,
+    isLoading,
   }
 }

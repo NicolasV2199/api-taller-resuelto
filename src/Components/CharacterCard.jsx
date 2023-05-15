@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 export const CharacterCard = ({ character }) => {
   return (
@@ -13,4 +13,8 @@ export const CharacterCard = ({ character }) => {
       </div>
     </>
   )
+}
+
+CharacterCard.propTypes = {
+  character: PropTypes.object.isRequired,
 }

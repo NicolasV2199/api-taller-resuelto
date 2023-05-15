@@ -1,5 +1,5 @@
 import { CharacterCard } from "./CharacterCard"
-
+import PropTypes from 'prop-types';
 
 export const CharactersList = ({ characters }) => {
   return (
@@ -13,4 +13,8 @@ export const CharactersList = ({ characters }) => {
       </div>
     </>
   )
+}
+
+CharactersList.propTypes = {
+  characters: PropTypes.array.isRequired,
 }
