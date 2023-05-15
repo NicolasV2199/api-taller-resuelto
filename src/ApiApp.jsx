@@ -5,24 +5,36 @@ import { usePagination } from "./Hooks/usePagination";
 
 export const ApiApp = () => {
 
-  const {pagination, decrement, increment} = usePagination();
-  const {characters, getCharacters, isLoading} = useFetchApi();
+  const { pagination, decrement, increment } = usePagination();
+  const { characters, getCharacters, isLoading } = useFetchApi();
 
   useEffect(() => {
     getCharacters(pagination);
   }, [pagination])
-  
+
 
   return (
     <>
-      <h1>Api app</h1>
-      { isLoading && (<p>Cargando...</p>) }
+      <div className="main-container">
+        <h1>Rick and Morty Characters</h1>
+        {isLoading && (<p>Cargando...</p>)}
 
-      <button onClick={decrement}>Anterior</button>
-      <span>{pagination}</span>
-      <button onClick={increment}>Siguiente</button>
+        <div className="pagination">
+          <button onClick={decrement}>Previous</button>
+          <span>Page: {pagination}</span>
+          <button onClick={increment}>Next</button>
+        </div>
 
-      <CharactersList characters={characters}/>
+        <CharactersList characters={characters} />
+
+        {!isLoading && (
+          <div className="pagination">
+            <button onClick={decrement}>Previous</button>
+            <span>Page: {pagination}</span>
+            <button onClick={increment}>Next</button>
+          </div>
+        )}
+      </div>
     </>
   )
 }
