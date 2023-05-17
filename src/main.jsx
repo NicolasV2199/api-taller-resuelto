@@ -1,11 +1,14 @@
-import React from 'react'
+// import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { ApiApp } from './ApiApp.jsx'
 
 import './assets/styles.css';
+import { ApiApp } from './ApiApp.jsx';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <ApiApp />
-  </React.StrictMode>,
+  <BrowserRouter>
+    {/* <React.StrictMode> */}
+      <ApiApp />
+    {/*</React.StrictMode>,*/}
+  </BrowserRouter>
 )

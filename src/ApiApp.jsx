@@ -1,40 +1,22 @@
-import { useEffect } from "react";
-import { CharactersList } from "./Components/CharactersList";
-import { useFetchApi } from "./Hooks/useFetchApi"
-import { usePagination } from "./Hooks/usePagination";
+import { Navigate, Route, Routes } from "react-router-dom"
+import { NavBar } from "./Components/NavBar"
+import { RickAndMortyPage } from "./pages/RickAndMortyPage"
+import { ProductsPage } from "./pages/ProductsPage"
 
 export const ApiApp = () => {
-
-  const { pagination, decrement, increment } = usePagination();
-  const { characters, getCharacters, isLoading } = useFetchApi();
-
-  useEffect(() => {
-    getCharacters(pagination);
-  }, [pagination])
-
-
   return (
     <>
-      <div className="main-container">
-        <h1>Rick and Morty Characters</h1>
-        {isLoading && (<p>Cargando...</p>)}
+      <NavBar/>
 
-        <div className="pagination">
-          <button onClick={decrement}>Previous</button>
-          <span>Page: {pagination}</span>
-          <button onClick={increment}>Next</button>
-        </div>
 
-        <CharactersList characters={characters} />
+      <Routes>
+        <Route path="/" element={<RickAndMortyPage/>}/>
+        <Route path="/products" element={<ProductsPage/>}/>
 
-        {!isLoading && (
-          <div className="pagination">
-            <button onClick={decrement}>Previous</button>
-            <span>Page: {pagination}</span>
-            <button onClick={increment}>Next</button>
-          </div>
-        )}
-      </div>
+
+        <Route path="/*" element={<Navigate to="/" />} />
+      </Routes>
+      
     </>
   )
 }
