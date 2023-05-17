@@ -8,16 +8,26 @@
   min-height: 100vh;
   text-align: center;
   padding: 2rem 1rem;
+  
+  color: white;
+}
+
+.characters-container{
   background: rgb(2,0,36);
   background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 54%, rgba(2,0,36,1) 100%);
-  color: white;
+}
+
+.products-container{
+  background: rgb(88,10,71);
+background: linear-gradient(90deg, rgba(88,10,71,1) 0%, rgba(144,15,162,1) 50%, rgba(88,10,71,1) 100%);
 }
 
 .pagination{
   margin: 1rem;
+  display: block;
 }
 
-.pagination button{
+.custom-button{
   min-width: 100px;
   margin: 0 1rem;
   padding: 0.5rem;
@@ -40,10 +50,18 @@
 .card{
   width: 280px;
   margin: 1rem;
-  background: rgb(23,163,177);
-  background: radial-gradient(circle, rgba(23,163,177,1) 0%, rgba(1,98,108,1) 50%, rgba(23,163,177,1) 100%);
   padding: 1rem;
   border-radius: 10px;
+}
+
+.product-card{
+  background: rgb(98,86,86);
+background: radial-gradient(circle, rgba(98,86,86,1) 0%, rgba(32,23,23,1) 100%);
+}
+
+.character-card{
+  background: rgb(23,163,177);
+  background: radial-gradient(circle, rgba(23,163,177,1) 0%, rgba(1,98,108,1) 50%, rgba(23,163,177,1) 100%);
 }
 
 .card img{
